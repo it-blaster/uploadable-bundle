@@ -25,7 +25,7 @@ class UploadableFile extends File
         $this->root_path = $root_path;
         $this->web_path  = $web_path;
 
-        return parent::__construct($root_path . $web_path);
+        parent::__construct($root_path . $web_path);
     }
 
     /**
