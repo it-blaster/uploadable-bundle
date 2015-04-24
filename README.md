@@ -19,7 +19,7 @@ Add it-blaster/uploadable-bundle to your `composer.json` file and run `composer`
 ```json
 ...
 "require": {
-    "it-blaster/uploadable-behavior": "dev-master"
+    "it-blaster/uploadable-bundle": "dev-master"
 }
 ...
 ```
@@ -52,7 +52,7 @@ This type inherits all the `file` type's options (except `constraints`) and has 
 ## Configuration
 
 The bundle has an only parameter `root_path` that determines the path to the project's root directory.
-Default value is `%kernel.root_dir%/../web`. You can configure it as follows:
+Default value is `%kernel.root_dir%/../web`. You can configure it in your `config.yml` as follows:
 
 ```yml
 ...
