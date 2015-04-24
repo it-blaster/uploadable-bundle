@@ -23,7 +23,7 @@ class FenrizbesUploadableExtension extends Extension
         $config = $this->processConfiguration($configuration, $configs);
 
         if (isset($config['root_path']) && !empty($config['root_path'])) {
-            $root_path = $config['root_path'];
+            $root_path = rtrim($config['root_path'], '/');
         } else {
             $root_path = $container->getParameter('kernel.root_dir') .'/../web';
         }
