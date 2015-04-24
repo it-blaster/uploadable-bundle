@@ -1,0 +1,14 @@
+{% block uploadable_label %}
+    {{ block('form_label') }}
+
+    {% if value.file is defined and value.file is not empty and attribute(value.file, 'getWebPath') is defined %}
+        <a href="{{ asset(value.file.webPath) }}" target="_blank">
+            {{ value.file.webPath }}
+        </a>
+    {% endif %}
+
+    {% if form.remove is defined %}
+        {{ form_widget(form.remove) }}
+        {{ form_label(form.remove) }}
+    {% endif %}
+{% endblock %}

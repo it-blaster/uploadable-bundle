@@ -1,0 +1,7 @@
+services:
+    fenrizbes_uploadable.form.type.uploadable:
+        class: Fenrizbes\UploadableBundle\Form\Type\UploadableType
+        arguments:
+            - %fenrizbes_uploadable.root_path%
+        tags:
+            - { name: form.type, alias: uploadable }
