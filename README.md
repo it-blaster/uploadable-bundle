@@ -60,3 +60,5 @@ fenrizbes_uploadable:
     root_path: /your/own/path
 ...
 ```
+## TODO
+- Delete previously uploaded files
