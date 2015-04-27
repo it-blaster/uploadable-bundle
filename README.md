@@ -19,7 +19,7 @@ Add it-blaster/uploadable-bundle to your `composer.json` file and run `composer`
 ```json
 ...
 "require": {
-    "it-blaster/uploadable-bundle": "dev-master"
+    "it-blaster/uploadable-bundle": "1.0.*"
 }
 ...
 ```
