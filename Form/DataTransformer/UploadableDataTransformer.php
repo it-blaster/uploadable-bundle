@@ -36,7 +36,11 @@ class UploadableDataTransformer implements DataTransformerInterface
         if (!is_array($data) || !isset($data['file']) || !$data['file'] instanceof File) {
             return null;
         }
-
+        
+        if ($data['file'] instanceof UploadableFile) {
+            return $data['file']->getWebPath();
+        }
+        
         return $data['file'];
     }
 }
