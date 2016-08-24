@@ -5,3 +5,8 @@ services:
             - %fenrizbes_uploadable.root_path%
         tags:
             - { name: form.type, alias: uploadable }
+
+    fenrizbes_uploadable.file_type_extension:
+            class: Fenrizbes\UploadableBundle\Form\Extension\FileNameTypeExtension
+            tags:
+                - { name: form.type_extension, extended_type: Symfony\Component\Form\Extension\Core\Type\FileType }
