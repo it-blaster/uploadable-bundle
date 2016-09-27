@@ -44,7 +44,7 @@ class FileNameTypeExtension extends AbstractTypeExtension
 
         $object = $event->getForm()->getParent()->getData();
         if(!$event->getForm()->getConfig()->getOption('multiple')) {
-            if(method_exists($object, 'setOriginalFileName')) {
+            if(method_exists($object, 'setOriginalFileName') && $fileData instanceof UploadedFile) {
                 $object->setOriginalFileName($fieldName, $fileData->getClientOriginalName());
             }
         }
