@@ -15,6 +15,7 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormBuilderInterface;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use Symfony\Component\Form\FormInterface;
 
@@ -50,7 +51,7 @@ class FileNameTypeExtension extends AbstractTypeExtension
         else {
             if(is_array($event->getForm()->getData())) {
                 foreach($event->getForm()->getData() as $key => $item) {
-                    if(method_exists($item, 'setOriginalFileName')) {
+                    if(method_exists($item, 'setOriginalFileName') && $fileData[$key] instanceof UploadedFile) {
                         $item->setOriginalFileName($fieldName, $fileData[$key]->getClientOriginalName()); //$item->getClientOriginalName()
                     }
                 }
